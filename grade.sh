@@ -12,7 +12,7 @@ else
 fi
 
 cp TestListExamples.java student-submission/
-cp -r lib student-submission/
+cp -rf lib student-submission/
 
 cd student-submission
 
@@ -23,12 +23,12 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-java -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar org.junit.runner.JUnitCore TestListExamples.java > test-output.txt
+java -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar org.junit.runner.JUnitCore TestListExamples > test-output.txt
 cat test-output.txt
 
 
 
 # Clean up the cloned directory
-cd ..
-rm -rf student-submission
+# cd ..
+# rm -rf student-submission
 
